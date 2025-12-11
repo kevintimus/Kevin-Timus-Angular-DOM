@@ -50,3 +50,26 @@ export function mostrarValores(idSelect: string, idDiv: string) {
   const div = document.getElementById(idDiv)!;
   div.innerHTML = Array.from(select.options).map(o => o.text).join('<br>');
 }
+
+export function copiarTextDiv(origen: string, destin: string) {
+  const divOrigen = document.getElementById(origen) as HTMLElement;
+  const divDestin = document.getElementById(destin)!;
+  const text = divOrigen ? divOrigen.innerHTML : '';
+  divDestin.innerHTML = text;
+}
+
+export class Llibre {
+  constructor(
+    public titol: string,
+    public tematiques: string[]
+  ) {}
+}
+
+export function mostrarLlibre(idDiv: string) {
+  const llibre: any = {
+    titol: 'El libre troll',
+    tematicas: ['Porque', 'no', 'va', 'nada']
+  };
+  const div = document.getElementById(idDiv)!;
+  div.innerHTML = `<br>${llibre.titol}<br>Temàtiques: ${llibre.tematicas.join(', ')}`;
+}
