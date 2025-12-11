@@ -44,3 +44,9 @@ export function CrearImagen(Imagen:string) {
   // @ts-ignore
   contenedor.appendChild(img);
 }
+
+export function mostrarValores(idSelect: string, idDiv: string) {
+  const select = document.getElementById(idSelect) as HTMLSelectElement;
+  const div = document.getElementById(idDiv)!;
+  div.innerHTML = Array.from(select.options).map(o => o.text).join('<br>');
+}

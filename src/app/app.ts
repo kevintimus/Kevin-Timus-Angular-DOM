@@ -1,6 +1,11 @@
 import {Component, OnInit, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {countWords, CrearImagen, yellowSubmarine} from "./funcions/funcions-module"
+import {
+  countWords,
+  CrearImagen,
+  mostrarValores,
+  yellowSubmarine
+} from "./funcions/funcions-module"
 import {changeSize} from "./funcions/funcions-module"
 
 
@@ -29,7 +34,9 @@ export class App implements OnInit{
     countWords("LoremIpsum")
 
     CrearImagen("Imagen")
-
+  }
+  onSelectChange() {
+    mostrarValores("select", "div");
   }
 }
 
